@@ -3,6 +3,7 @@ projectData = {};
 
 // Require Express to run server and routes
 const express = require("express");
+const bodyParser = require('body-parser')
 // Start up an instance of app
 const app = express();
 /* Middleware*/
@@ -20,3 +21,7 @@ app.use(express.static("website"));
 const port = 8000;
 const successM = () => console.log(`server is running on port : ${port}`);
 const server = app.listen(port, successM);
+
+//endpoint object 
+
+const projectData = {};
