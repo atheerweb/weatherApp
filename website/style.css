@@ -24,14 +24,18 @@ body{
 .holder{
     margin: auto;
 }
-
-.entry{
-    border:5px solid black;
-    border-radius: 10px;
+#entry__title{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 10px;
 }
-
 #entryHolder{
-
+border: 3px black solid;
+width:250px;
+height: 100px;
+margin:auto;
+border-radius: 10px;
+background-color: white;
 }
 
 #date{
@@ -99,7 +103,7 @@ textarea{
     font-size: 1.3rem;
     font-family: 'Oswald', sans-serif;
     width: 85%;
-    height:200px;
+    height:80px;
     border:solid 2px black;
     margin: 60px;
     border-radius: 10px;
@@ -130,7 +134,7 @@ button:focus {
 
 
 .entry {
-        margin-top: 300px;
+        margin-top: 180px;
     }
 @media screen and (min-width:1366px){
     .headline {

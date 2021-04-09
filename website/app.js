@@ -1,18 +1,26 @@
 /* Global Variables */
 // fetch API
-document.addEventListener('click' , weather)
-const weather = async ( baseUrl , api , inputValue ) =>{
-     baseUrl    = "http://api.openweathermap.org/data/2.5/weather?q=Cairo&appid=";
-     api        = "10ffa9fc67e9982b1f9ead91b08820c2"
-     inputValue = '';
-    const response = await fetch (baseUrl+api)
-    try{
-        const finalStageData = response.temp.json()
-        console.log(finalStageData)
-    }catch(error){
-        console.log(`failed due to : ${error}`)
-    }
-}
+const baseUrl = "http://api.openweathermap.org/data/2.5/weather?zip=";
+  const api = "&appid=10ffa9fc67e9982b1f9ead91b08820c2";
+  const inputValue = document.querySelector("#zip")
+  feeling = document.querySelector("#feelings")
+
+const weather = async (base, API, zip) => {
+  const response = await fetch(base + zip + API);
+  try {
+    const finalStageData = response.json();
+    return(finalStageData)
+  } catch (error) {
+    console.log(`failed due to : ${error}`);
+  }
+};
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
+
+
+const printInfo = () => {
+    console.log(weather(baseUrl , api ,inputValue.value ) )
+}
+
+document.querySelector("#generate").addEventListener("click", printInfo) 
