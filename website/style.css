@@ -31,11 +31,12 @@ body{
 }
 #entryHolder{
 border: 3px black solid;
-width:250px;
-height: 100px;
+width:280px;
+height: 200px;
 margin:auto;
 border-radius: 10px;
 background-color: white;
+padding: 10px;
 }
 
 #date{
