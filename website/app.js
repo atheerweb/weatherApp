@@ -2,7 +2,7 @@
 button = document.getElementById("generate");
 textArea = document.getElementById("feelings");
 const baseUrl = "http://api.openweathermap.org/data/2.5/weather?zip=";
-const api = "&appid=10ffa9fc67e9982b1f9ead91b08820c2";
+const api = "&appid=10ffa9fc67e9982b1f9ead91b08820c2&units=metric";
 const inputValue = document.querySelector("#zip");
 feeling = document.querySelector("#feelings");
 
@@ -18,7 +18,7 @@ const weather = async (base, API, zip) => {
 };
 // Create a new date instance dynamically with JS*/
 let d = new Date();
-let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
+let newDate = d.getMonth() + 1 + "." + d.getDate() + "." + d.getFullYear();
 
 // posting api data fetch
 const postingData = async (url = "", pData = {}) => {
