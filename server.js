@@ -2,7 +2,6 @@
 projectData = [];
 // Require Express to run server and routes
 const express = require("express");
-const bodyParser = require('body-parser')
 // Start up an instance of app
 const app = express();
 /* Middleware*/
@@ -21,24 +20,22 @@ const port = 8000;
 const successM = () => console.log(`server is running on port : ${port}`);
 const server = app.listen(port, successM);
 
-//get route
-const getData = (request , response) => {
-    response.send(projectData)
-    projectData = [];
-}
+//get route to have all the data on /allData route
+const getData = (request, response) => {
+  response.send(projectData);
+  projectData = [];
+};
 
-app.use('/allData' , getData) 
+app.use("/allData", getData);
 
+// post route to post data from the client side to the server
+const addTemp = (request, resolve) => {
+  let data = {
+    date: request.body.date,
+    temp: request.body.temp,
+  };
+  projectData.push(data);
+  console.log(projectData);
+};
 
-
-// post route
-const addTemp = (request , resolve)=> {
-    let data = {
-        date : request.body.date,
-        temp : request.body.temp
-    }
-    projectData.push(data)
-    console.log(projectData)
-}
-
-app.post('/weather' , addTemp);
+app.post("/weather", addTemp);
