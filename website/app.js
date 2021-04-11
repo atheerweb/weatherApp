@@ -50,8 +50,6 @@ const updatingClientInterface = async () => {
     console.log("error", error);
   }
 };
-button.addEventListener("click", preform);
-
 //preforming the fetch api and sending data to the server and in the same time posting the desired data to the client side
 const preform = () => {
   weather(baseUrl, api, inputValue.value).then((data) => {
@@ -60,3 +58,4 @@ const preform = () => {
     updatingClientInterface();
   });
 };
+button.addEventListener("click", preform);
